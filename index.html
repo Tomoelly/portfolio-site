@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elly Huang — .NET Backend Engineer & AI Builder</title>
+<meta name="description" content=".NET backend engineer and AI-assisted product builder. Portfolio of production LINE Bot systems, workflow backends, and shipped Flutter/Firebase products." />
+<meta property="og:title" content="Elly Huang — .NET Backend Engineer & AI Builder" />
+<meta property="og:description" content="Production .NET backend work, 24,000+ LINE users, and shipped AI-assisted products." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/svg+xml" href="favicon.svg" />
+<style>
+  :root{
+    --bg:#0f1419; --panel:#161c24; --card:#1c2530; --line:#28323f;
+    --txt:#e8edf2; --muted:#9aa7b4; --accent:#f0b429; --accent2:#38bdf8;
+    --radius:18px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg); color:var(--txt);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+  .accent{color:var(--accent)}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:10;background:rgba(15,20,25,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:12px;height:62px}
+  nav .brand{font-weight:700;letter-spacing:.2px}
+  nav .spacer{flex:1}
+  nav .links{display:flex;gap:22px;color:var(--muted);font-size:14px}
+  nav .links a:hover{color:var(--txt)}
+  @media(max-width:600px){nav .links{gap:16px;font-size:13px}}
+
+  /* hero */
+  header{padding:80px 0 52px}
+  header .eyebrow{font-size:13px;color:var(--accent);letter-spacing:2px;text-transform:uppercase}
+  header h1{font-size:clamp(36px,6.5vw,62px);line-height:1.08;letter-spacing:-1px;font-weight:800;margin-top:14px}
+  header .tag{font-size:clamp(18px,2.8vw,24px);color:var(--txt);margin-top:18px;font-weight:600}
+  header p.lead{max-width:640px;color:var(--muted);font-size:16.5px;margin-top:18px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;font-size:15px;border:1px solid var(--line);transition:.18s}
+  .btn-primary{background:var(--accent);color:#08120b;border-color:transparent}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(240,180,41,.22)}
+  .btn-dark{background:var(--card)}
+  .btn-dark:hover{transform:translateY(-2px);border-color:var(--accent2)}
+
+  /* section frame */
+  section{padding:54px 0}
+  .s-eyebrow{font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:var(--accent)}
+  .s-title{font-size:clamp(25px,4vw,34px);font-weight:800;margin-top:8px;letter-spacing:-.3px}
+  .s-sub{color:var(--muted);margin-top:10px;max-width:620px}
+
+  /* project cards */
+  .projects{display:flex;flex-direction:column;gap:20px;margin-top:36px}
+  .proj{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.18s}
+  .proj:hover{border-color:#33414f;transform:translateY(-2px)}
+  .proj .top{display:flex;align-items:flex-start;gap:14px;flex-wrap:wrap}
+  .proj .ico{font-size:26px;line-height:1}
+  .proj h3{font-size:21px;letter-spacing:-.2px}
+  .proj .meta{color:var(--muted);font-size:13px;margin-top:3px}
+  .proj .flag{margin-left:auto;font-size:12px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+  .flag-live{color:var(--accent);border-color:rgba(240,180,41,.35);background:rgba(240,180,41,.08)}
+  .flag-case{color:var(--accent2);border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.08)}
+  .flag-wip{color:var(--muted)}
+  .proj p.desc{color:var(--txt);margin-top:14px;font-size:15.5px}
+  .proj .highs{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .proj .highs span{font-size:12.5px;color:var(--muted);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+  .proj .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .proj .links a{font-size:13.5px;font-weight:600;color:var(--accent2);border:1px solid var(--line);border-radius:10px;padding:8px 14px;transition:.15s}
+  .proj .links a:hover{border-color:var(--accent2);background:rgba(56,189,248,.07)}
+  .proj .links a.muted{color:var(--muted)}
+
+  /* about */
+  #about{background:var(--panel)}
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:38px;margin-top:30px}
+  @media(max-width:740px){.about-grid{grid-template-columns:1fr;gap:26px}}
+  .about-grid p{color:var(--muted);font-size:16px;margin-bottom:14px}
+  .about-grid p b{color:var(--txt);font-weight:600}
+  .facts{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;height:fit-content}
+  .facts h4{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;color:var(--accent);margin-bottom:14px}
+  .facts .row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+  .facts .row:first-of-type{border-top:none}
+  .facts .row span:first-child{color:var(--muted)}
+  .facts .row span:last-child{text-align:right}
+
+  /* contact */
+  #contact{text-align:center}
+  #contact .s-title{margin-bottom:8px}
+  .contact-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+
+  footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:13.5px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Elly Huang</span>
+    <span class="spacer"></span>
+    <div class="links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">.NET Backend Engineer · AI Builder</div>
+    <h1>I build backend systems<br /><span class="accent">and ship AI-assisted products.</span></h1>
+    <p class="tag">Production .NET work, 24,000+ LINE users, and solo-shipped products.</p>
+    <p class="lead">I'm a backend engineer who uses AI as a serious development tool: to clarify systems, move faster, and get working software in front of real users. My strongest work sits at the intersection of .NET backend engineering, LINE integrations, product thinking, and AI-assisted building.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#work">See my work ↓</a>
+      <a class="btn btn-dark" href="assets/Elly-Huang-Resume-EN.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a class="btn btn-dark" href="mailto:ellyhuang26@gmail.com">Email me</a>
+      <a class="btn btn-dark" href="https://github.com/Tomoelly" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="wrap">
+    <div class="s-eyebrow">Selected work</div>
+    <h2 class="s-title">Things I've actually shipped</h2>
+    <p class="s-sub">Two live products you can open right now, and two enterprise systems written up as detailed case studies.</p>
+
+    <div class="projects">
+
+      <!-- TaskTree -->
+      <div class="proj">
+        <div class="top">
+          <span class="ico">🌳</span>
+          <div>
+            <h3>TaskTree — Branch Your Tasks</h3>
+            <div class="meta">Solo-built cross-platform app · live on the App Store</div>
+          </div>
+          <span class="flag flag-live">● Live</span>
+        </div>
+        <p class="desc">A task manager that turns overwhelming projects into calm, nested task trees — with a unique three-state system (Active / Completed / Paused) so your progress bar stays honest. Designed, built, and shipped end-to-end.</p>
+        <div class="highs">
+          <span>Flutter + Firebase</span><span>iOS · Web · Android (soon)</span><span>6-level task trees</span><span>Google Sign-In + cloud sync</span><span>AI-assisted build</span>
+        </div>
+        <div class="links">
+          <a href="https://growmytasktree.web.app" target="_blank" rel="noopener">Product page →</a>
+          <a href="https://apps.apple.com/us/app/tasktree-branch-your-tasks/id6761607208" target="_blank" rel="noopener">App Store</a>
+          <a href="https://task-manager-app-e19d6.web.app" target="_blank" rel="noopener">Web app</a>
+        </div>
+      </div>
+
+      <!-- LINE Bot -->
+      <div class="proj">
+        <div class="top">
+          <span class="ico">💬</span>
+          <div>
+            <h3>Enterprise LINE Bot — 24,000+ users</h3>
+            <div class="meta">Backend engineer @ 大學光學科技 · production system</div>
+          </div>
+          <span class="flag flag-case">Case study</span>
+        </div>
+        <p class="desc">An independently developed LINE Bot backend serving 24,000+ real users — member binding with OTP, a QR-code stamp-collection mechanism with automatic coupon redemption, dynamic Rich Menus, and real-time Flex Message notifications, all running across three integrated databases.</p>
+        <div class="highs">
+          <span>ASP.NET Core 8 WebAPI</span><span>35 endpoints · 10 controllers</span><span>3 databases</span><span>HMAC-SHA256 auth</span><span>GitHub Actions CI/CD</span>
+        </div>
+        <div class="links">
+          <a href="case-linebot.html">Read the case study →</a>
+        </div>
+      </div>
+
+      <!-- 徵文101 -->
+      <div class="proj">
+        <div class="top">
+          <span class="ico">📝</span>
+          <div>
+            <h3>Referral Essay Management System</h3>
+            <div class="meta">Backend engineer @ 大學光學科技 · multi-role workflow</div>
+          </div>
+          <span class="flag flag-case">Case study</span>
+        </div>
+        <p class="desc">A social-media referral submission system: customers post recommendations, submit proof, and pass a two-layer review (consultant → customer service) before rewards are issued. Complex state-machine logic coordinating customers, consultants, and CS across a dual LINE Bot architecture.</p>
+        <div class="highs">
+          <span>.NET 6 Web API</span><span>13 endpoints · 11 states · 3 plans</span><span>Dual-layer review</span><span>Dual LINE Bot architecture</span><span>CI/CD</span>
+        </div>
+        <div class="links">
+          <a href="case-essay.html">Read the case study →</a>
+        </div>
+      </div>
+
+      <!-- navi -->
+      <div class="proj">
+        <div class="top">
+          <span class="ico">🧭</span>
+          <div>
+            <h3>navi-my-career — AI career navigator</h3>
+            <div class="meta">Solo full-stack side project</div>
+          </div>
+          <span class="flag flag-wip">○ Rebuilding</span>
+        </div>
+        <p class="desc">A full-stack web app that analyzes a résumé against a target job and maps the skill gap, powered by an AI analysis pipeline. Built solo end-to-end — auth, database, and an AI integration that returns structured, localized skill analysis. Currently being rebuilt for a stable public demo.</p>
+        <div class="highs">
+          <span>React + TypeScript</span><span>Supabase (auth + DB)</span><span>Gemini AI analysis</span><span>Full-stack SaaS</span>
+        </div>
+        <div class="links">
+          <a href="mailto:ellyhuang26@gmail.com" class="muted">Demo &amp; code on request</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="s-eyebrow">About</div>
+    <h2 class="s-title">The long way round</h2>
+    <div class="about-grid">
+      <div>
+        <p>I started in <b>plant science</b> (NTU, MSc), then wound through <b>hotel management in Palau, HR, operations at a tea startup, and even a vet clinic</b> before becoming a backend engineer.</p>
+        <p>What I bring is a practical builder's mix: <b>.NET backend implementation, AI-assisted development, and enough cross-domain context to care whether the thing we build is actually useful</b>.</p>
+        <p>The cross-domain detour isn't a gap on my résumé — it's why I notice the human problem behind the feature, communicate across teams, and care whether the thing we build is actually <b>worth building</b>.</p>
+      </div>
+      <div class="facts">
+        <h4>At a glance</h4>
+        <div class="row"><span>Based in</span><span>Taipei, Taiwan</span></div>
+        <div class="row"><span>Languages</span><span>Mandarin (native) · English (fluent)</span></div>
+        <div class="row"><span>Core stack</span><span>.NET · Flutter · React</span></div>
+        <div class="row"><span>Best at</span><span>.NET APIs · LINE integrations · AI-assisted shipping</span></div>
+        <div class="row"><span>Background</span><span>Plant science · HR · Hospitality</span></div>
+        <div class="row"><span>Open to</span><span>Remote backend / AI product roles</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="s-eyebrow">Get in touch</div>
+    <h2 class="s-title">Let's build something worth building.</h2>
+    <p class="s-sub" style="margin-left:auto;margin-right:auto">Open to remote backend and AI product roles where I can build practical systems and ship real products. The fastest way to reach me is email.</p>
+    <div class="contact-btns">
+      <a class="btn btn-primary" href="mailto:ellyhuang26@gmail.com">ellyhuang26@gmail.com</a>
+      <a class="btn btn-dark" href="assets/Elly-Huang-Resume-EN.pdf" target="_blank" rel="noopener">Resume PDF</a>
+      <a class="btn btn-dark" href="https://github.com/Tomoelly" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Elly Huang · AI Builder &amp; Backend Engineer · Built with a little code and a lot of AI
+  </div>
+</footer>
+
+</body>
+</html>
