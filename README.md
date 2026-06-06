@@ -6,6 +6,11 @@ Live site:
 
 - https://aibuilderfolio.web.app
 
+Source and backup hosting:
+
+- GitHub repo: https://github.com/Tomoelly/portfolio-site
+- GitHub Pages backup: https://tomoelly.github.io/portfolio-site/
+
 Includes:
 
 - Portfolio landing page
@@ -30,4 +35,3 @@ http://localhost:8765
 ```bash
 firebase deploy --only hosting:aibuilderfolio
 ```
-
